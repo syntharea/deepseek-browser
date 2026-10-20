@@ -1,0 +1,7 @@
+work/
+dist/
+brand/
+node_modules/
+__pycache__/
+*.zip
+*.log

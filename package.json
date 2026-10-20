@@ -1,0 +1,13 @@
+{
+  "name": "deepseek-browser",
+  "version": "2.0.24",
+  "private": true,
+  "description": "DeepSeek-branded browser agent build pipeline and tests",
+  "scripts": {
+    "test:mock": "node test/mock-deepseek.js",
+    "test:e2e": "node test/e2e.js"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.58.2"
+  }
+}
