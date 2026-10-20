@@ -4,6 +4,8 @@ An unofficial, reproducible build pipeline that turns an upstream Chrome browser
 
 This repository contains **only original tooling, UI overlay, tests and documentation**. It does **not** redistribute the upstream extension bundle. You need your own local copy of the upstream 2.0.24 extension to build.
 
+> **This repo is not a ready-to-load Chrome extension.** It is a build pipeline. If you want to install it, run `./build.sh /path/to/upstream-2.0.24_0` first, then load `work/deepseek-ext` in `chrome://extensions`.
+
 > Not affiliated with, endorsed by, or sponsored by DeepSeek or the upstream extension authors. DeepSeek and the DeepSeek logo are trademarks of their respective owner; they are used only to identify the model backend. See [NOTICE.md](NOTICE.md).
 
 ## What it does
@@ -23,7 +25,17 @@ This repository contains **only original tooling, UI overlay, tests and document
 - A Chrome/Chromium executable (tests only)
 - A local copy of the upstream browser-agent extension **2.0.24** (Chrome MV3)
 
-## Build
+## Quick start
+
+```bash
+git clone https://github.com/syntharea/deepseek-browser.git
+cd deepseek-browser
+./build.sh /path/to/upstream/2.0.24_0
+```
+
+The script copies your upstream copy into `work/deepseek-ext`, applies all patches/branding, and writes `dist/deepseek-browser-2.0.24.zip`. It does not download or redistribute the upstream bundle.
+
+## Manual build
 
 ```bash
 git clone https://github.com/syntharea/deepseek-browser.git
@@ -91,6 +103,7 @@ The tests cover key configuration, model discovery, the setup entry/banner, a no
 | `tools/make_brand_assets.py` | Downloads the official mark and generates icons/posters/video |
 | `test/mock-deepseek.js` | OpenAI-compatible mock, validates token/thinking/reasoning behaviour |
 | `test/e2e.js` | Playwright end-to-end test with Chrome extensions |
+| `build.sh` | One-command build from a local upstream copy |
 
 ## Legal
 
